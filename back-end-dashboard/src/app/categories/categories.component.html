@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 bg-secondary-theme p-5">
+      <h3 class="text-center text-theme-primary">
+        {{ formStatus }} Categories
+      </h3>
+      <p class="text-center mb-5">You can add new categories from here ..!</p>
+
+      <form
+        #categoryForm="ngForm"
+        (ngSubmit)="onSubmit(categoryForm)"
+        class="form-inline text-center row"
+      >
+        <div class="form-group col-10">
+          <input
+            type="text"
+            class="form-control shadow-effect"
+            placeholder="Add New Categories"
+            #newCategory="ngModel"
+            [(ngModel)]="formCategory"
+            name="category"
+            required
+            [ngClass]="{
+              'is-invalid': newCategory.touched && newCategory.invalid
+            }"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="newCategory.touched && newCategory.invalid"
+          >
+            Category field is required !
+          </div>
+        </div>
+        <div class="col-2">
+          <button
+            class="submit-button btn btn-info btn-block mb-2 btn-theme"
+            [disabled]="categoryForm.invalid"
+          >
+            {{ formStatus }} Category
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card shadow-effect">
+        <div class="card-body">
+          <table class="table row-border hover">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Category</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of userData | async; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ data.category }}</td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-warning"
+                    (click)="onEdit(data.category, data.id)"
+                  >
+                    Edit
+                  </button>
+
+                  <button
+                    class="btn btn-sm btn-danger"
+                    (click)="onDelete(data.id)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

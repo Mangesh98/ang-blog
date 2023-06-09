@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ngx-toastr/toastr";
 :root {
   --primary-color: #026467 !important;
   --secondary-color: #e5f5ea !important;

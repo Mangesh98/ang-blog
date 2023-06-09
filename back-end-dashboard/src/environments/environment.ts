@@ -6,4 +6,6 @@ export const environment = {
     apiKey: 'AIzaSyCyTMH3wXDMLbOte7665YTRke8d-bBZpeQ',
     authDomain: 'ang-blog-a3cc2.firebaseapp.com',
     messagingSenderId: '915378859731',
-  },};
+  },
+  production: false,
+};
