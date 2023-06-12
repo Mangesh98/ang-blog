@@ -13,7 +13,6 @@ export class CategoriesComponent {
   categoryId!: string;
   formStatus: string = 'Add';
   constructor(private categoryService: CategoriesService) {
-    // categoryService.loadData();
     this.userData = categoryService.loadData();
   }
 
@@ -36,8 +35,7 @@ export class CategoriesComponent {
     this.formStatus = 'Edit';
     this.categoryId = id;
   }
-  onDelete(id:any)
-  {
+  onDelete(id: any) {
     this.categoryService.deleteData(id);
   }
 }

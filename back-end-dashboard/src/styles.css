@@ -9,7 +9,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--body-text-color);
 }
 .site-logo {
@@ -32,7 +32,6 @@ body {
 input[type="text"],
 input[type="email"] {
   height: 60px;
-  font: 30px;
   padding-left: 13px;
   width: 100%;
 }
@@ -41,6 +40,9 @@ input[type="email"] {
   height: 58px;
   font-size: 13px;
   background-color: var(--primary-color);
+}
+.bg-theme:hover{
+  background-color: #046669 !important;
 }
 .bg-secondary-theme {
   background-color: var(--secondary-color);

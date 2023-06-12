@@ -1,0 +1,10 @@
+button {
+  margin-left: 1em;
+}
+.img-preview {
+  height: 250px;
+}
+.permalinkInput {
+  background-color: var(--bs-secondary-bg);
+  opacity: 1;
+}
