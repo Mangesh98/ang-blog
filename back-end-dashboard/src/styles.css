@@ -30,10 +30,11 @@ body {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
   height: 60px;
-  padding-left: 13px;
-  width: 100%;
+  padding-left: 20px;
+  width: 100% !important;
 }
 .btn-theme {
   border: none;
@@ -41,7 +42,7 @@ input[type="email"] {
   font-size: 13px;
   background-color: var(--primary-color);
 }
-.bg-theme:hover{
+.bg-theme:hover {
   background-color: #046669 !important;
 }
 .bg-secondary-theme {
@@ -52,4 +53,11 @@ input[type="email"] {
 }
 a {
   text-decoration: none;
+}
+.submit-button :hover,
+:disabled {
+  background-color: #046669 !important;
+}
+.submit-button {
+  color: var(--secondary-color) !important;
 }
