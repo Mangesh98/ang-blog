@@ -10,17 +10,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-lg-3">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-lg-3">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-lg-3">
-        <app-post-card></app-post-card>
+      <div
+        class="col-lg-3"
+        *ngFor="let featuredPost of featuredPostData$ | async"
+      >
+        <app-post-card [postData]="featuredPost"></app-post-card>
       </div>
     </div>
   </div>
@@ -34,29 +28,11 @@
     </p>
   </div>
   <div class="row">
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
+    <div
+      class="col-md-4 mt-3"
+      *ngFor="let letestPost of letestPostData$ | async"
+    >
+      <app-post-card [postData]="letestPost"></app-post-card>
     </div>
   </div>
 </section>

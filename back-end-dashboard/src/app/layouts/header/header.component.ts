@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService) {}
   ngOnInit(): void {
     const currentUser = this.authService.getCurrentUser();
-    console.log(currentUser);
+    // console.log(currentUser);
 
     if (currentUser !== null) {
       this.currentUserEmail$ =

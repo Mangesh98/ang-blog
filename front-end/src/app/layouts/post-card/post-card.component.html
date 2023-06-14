@@ -1,25 +1,27 @@
-<div class="card shadow-effect">
+<div class="card shadow-effect" *ngIf="postData" [routerLink]="['/post',postData.id]">
   <img
     class="card-img-top"
-    src="https://images.pexels.com/photos/17056136/pexels-photo-17056136/free-photo-of-dia-de-la-dona.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    src="{{ postData.postImgPath }}"
     alt="Card image cap"
   />
   <div class="card-body">
-    <small class="bg-light text-danger text-center">Design</small>
-    <small class="bg-light text-success text-center px-3 ">Featured</small>
-    <small class="bg-light text-info text-center px-3 ">Views - 132</small>
+    <small class="bg-light text-danger text-center">{{
+      postData.category.category
+    }}</small>
+    <small class="bg-light text-success text-center px-3" *ngIf="postData.isFeatured">Featured</small>
+    <small class="bg-light text-info text-center px-3">{{
+      postData.views
+    }}</small>
 
     <h5 class="mt-1">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aut!
+      {{ postData.title }}
     </h5>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, fuga
-      iure. Repellat illo quis dolore repellendus earum alias, error quos
-      quidem! Dolorum, labore.
+      {{ postData.excerpt }}
     </p>
 
     <small class="bg-light text-warning text-center px-3"
-      >Last Update - SEP 20, 2023</small
+      >Last Update - {{ postData.createdAt.toMillis() | date }}</small
     >
   </div>
 </div>

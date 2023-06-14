@@ -33,7 +33,6 @@ export class PostsService {
   async uploadImg(file: File, postData: any, formStatus: string, id: string) {
     const storagePath = `postIMG/${Date.now()}`;
     const storageRef = ref(this.storage, storagePath);
-    const snapshot = await uploadBytes(storageRef, file);
     const downloadURL = await getDownloadURL(storageRef);
     postData.postImgPath = downloadURL;
 
