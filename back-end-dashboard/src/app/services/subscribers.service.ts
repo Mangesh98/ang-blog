@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, deleteDoc, doc } from '@angular/fire/firestore';
+import {
+  Firestore,
+  collection,
+  collectionData,
+  deleteDoc,
+  doc,
+} from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
