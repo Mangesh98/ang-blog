@@ -11,7 +11,11 @@
           <small class="bg-light text-danger text-center">{{
             postData.category.category
           }}</small>
-          <small class="bg-light text-success text-center px-3" *ngIf="postData.isFeatured">Featured</small>
+          <small
+            class="bg-light text-success text-center px-3"
+            *ngIf="postData.isFeatured"
+            >Featured</small
+          >
           <small class="bg-light text-info text-center px-3"
             >Views - {{ postData.views }}</small
           >
@@ -28,10 +32,7 @@
         <app-comment-list></app-comment-list>
       </div>
     </div>
-    <div class="col-md-3" style="background-color: green">
-      <!-- <div *ngIf="categoryPosts$ | async as categoryData">
-        <app-post-card [postData]="categoryData"></app-post-card>
-      </div> -->
+    <div class="col-md-3">
       <ng-container *ngFor="let categoryData of categoryPosts$ | async">
         <app-post-card [postData]="categoryData"></app-post-card>
       </ng-container>

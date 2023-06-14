@@ -20,6 +20,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { AuthGuard } from './services/auth.guard';
+import { SubscribersComponent } from './subscribers/subscribers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { AuthGuard } from './services/auth.guard';
     AllPostComponent,
     NewPostComponent,
     LoginComponent,
+    SubscribersComponent,
   ],
   imports: [
     ReactiveFormsModule,
