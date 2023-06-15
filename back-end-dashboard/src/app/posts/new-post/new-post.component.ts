@@ -38,8 +38,8 @@ export class NewPostComponent implements OnInit {
             for (const obj of data) {
               const id = obj.id;
               if (this.postId == id) {
-                console.log(obj);
-                
+                // console.log(obj);
+
                 this.postForm = this.fb.group({
                   title: [
                     obj.title,
@@ -54,7 +54,7 @@ export class NewPostComponent implements OnInit {
                     `${obj.category.categoryId}-${obj.category.category}`,
                     Validators.required,
                   ],
-                  postImg: ['', Validators.required],
+                  postImg: [obj.postImgPath],
                   content: [obj.content, Validators.required],
                 });
                 this.imgSrc = obj.postImgPath;
@@ -115,7 +115,7 @@ export class NewPostComponent implements OnInit {
         categoryId: splitted[0],
         category: splitted[1],
       },
-      postImgPath: '',
+      postImgPath: this.imgSrc,
       excerpt: this.postForm.value.excerpt,
       content: this.postForm.value.content,
       isFeatured: false,
@@ -123,14 +123,26 @@ export class NewPostComponent implements OnInit {
       status: 'New',
       createdAt: new Date(),
     };
+    // console.log(this.postForm.value);
+
     this.postService.uploadImg(
       this.selectedImg,
       postData,
       this.formStatus,
-      this.postId
+      this.postId,
+      this.isUplodedImg(this.imgSrc)
     );
 
     this.postForm.reset();
     this.imgSrc = './assets/placeholder-image.png';
+  }
+  isUplodedImg(url: string): boolean {
+    const firebasePrefix = 'https://firebasestorage.googleapis.com/'; // Assuming Firebase images start with this prefix
+
+    if (url.startsWith(firebasePrefix)) {
+      return true; // URL is a Firebase image
+    } else {
+      return false; // URL is a file uploaded image
+    }
   }
 }

@@ -6,11 +6,14 @@ import {
   collectionData,
   deleteDoc,
   doc,
+  orderBy,
+  query,
   updateDoc,
 } from '@angular/fire/firestore';
 import {
   deleteObject,
   getDownloadURL,
+  getMetadata,
   getStorage,
   ref,
   uploadBytes,
@@ -30,15 +33,31 @@ export class PostsService {
     private router: Router
   ) {}
 
-  async uploadImg(file: File, postData: any, formStatus: string, id: string) {
-    const storagePath = `postIMG/${Date.now()}`;
-    const storageRef = ref(this.storage, storagePath);
-    const downloadURL = await getDownloadURL(storageRef);
-    postData.postImgPath = downloadURL;
-
-    if (formStatus == 'Edit') {
+  async uploadImg(
+    file: File,
+    postData: any,
+    formStatus: string,
+    id: string,
+    changeImg: boolean
+  ) {
+    if (formStatus == 'Edit' && changeImg) {
+      // Edit post without changing img
+      this.updateData(id, postData);
+    } else if (formStatus == 'Edit' && !changeImg) {
+      // Edit post with changing img
+      const storagePath = `postIMG/${Date.now()}`;
+      const storageRef = ref(this.storage, storagePath);
+      await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(storageRef);
+      postData.postImgPath = downloadURL;
       this.updateData(id, postData);
     } else {
+      // insert new data
+      const storagePath = `postIMG/${Date.now()}`;
+      const storageRef = ref(this.storage, storagePath);
+      await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(storageRef);
+      postData.postImgPath = downloadURL;
       this.saveData(postData);
     }
   }
@@ -57,7 +76,12 @@ export class PostsService {
     // collectionData(this.conllectionInstance, { idField: 'id' }).subscribe(
     //   () => {}
     // );
-    return collectionData(this.conllectionInstance, { idField: 'id' });
+    const latestQuery = query(
+      this.conllectionInstance,
+      orderBy('createdAt', 'desc')
+    );
+    return collectionData(latestQuery, { idField: 'id' });
+    // return collectionData(this.conllectionInstance, { idField: 'id' });
   }
   updateData(id: string, updateData: any) {
     const docInstance = doc(this.firestore, 'posts', id);
