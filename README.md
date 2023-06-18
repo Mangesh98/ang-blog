@@ -1,10 +1,10 @@
-# ang-blog (https://mangesh98.github.io/angular-blog/)
+# ANG-BLOG (https://mangesh98.github.io/angular-blog/)
 
 ![Frontend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151337.png) 
 
 ![Frontend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151448.png)
 
-# ang-blog-dashboard (https://mangesh98.github.io/angular-blog-dashboard/)
+# ANG-BLOG-DASHBOARD (https://mangesh98.github.io/angular-blog-dashboard/)
 ![Backend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151731.png)
 
 ![Backend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151612.png)
