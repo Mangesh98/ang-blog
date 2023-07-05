@@ -1,4 +1,7 @@
 # ANG-BLOG
+## ANG-BLOG (https://mangesh98.github.io/angular-blog/)
+## ANG-BLOG-DASHBOARD (https://mangesh98.github.io/angular-blog-dashboard/)
+### For Test email : admin@test.com & password : admin123
 
 ## Description
 ang-blog is a web application developed using Angular that serves as a blogging platform. It allows users to create, read, update, and delete blog posts. The frontend is built with Angular, providing a responsive and user-friendly interface for interacting with the blog. The backend is developed using [insert backend framework here] and provides the necessary APIs for managing the blog posts.
@@ -17,6 +20,7 @@ ang-blog is a web application developed using Angular that serves as a blogging 
 ![Frontend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151448.png)
 
 # ANG-BLOG-DASHBOARD (https://mangesh98.github.io/angular-blog-dashboard/)
+## For Test email : admin@test.com & password : admin123
 ![Backend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151731.png)
 
 ![Backend](https://github.com/Mangesh98/ang-blog/blob/5c508bfef2ee4892ad0156a7f1ed665b0f1c4505/front-end/src/assets/Screenshot%202023-06-15%20151612.png)
